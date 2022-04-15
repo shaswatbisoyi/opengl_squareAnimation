@@ -42,7 +42,7 @@ int main() {
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
 
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Reached Triangle", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Reached uniforms", NULL, NULL);
 	if (window == NULL) {
 		std::cout << "Failed to create window Object" << std::endl;
 		glfwTerminate();
@@ -78,7 +78,7 @@ int main() {
 	unsigned int fragmentShader[2];
 	fragmentShader[0] = glCreateShader(GL_FRAGMENT_SHADER);
 	fragmentShader[1] = glCreateShader(GL_FRAGMENT_SHADER);
-
+			
 	glShaderSource(fragmentShader[0], 1, &fragmentShader1Source, NULL);
 	glCompileShader(fragmentShader[0]);
 
@@ -170,6 +170,7 @@ int main() {
 	glGenBuffers(1, &VBO[1]);
 
 	glBindVertexArray(VAO[1]);
+
 	glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2), &vertices2, GL_STATIC_DRAW);
 
